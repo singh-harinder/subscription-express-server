@@ -11,11 +11,8 @@ services:
     ports:
       - '4000:4000'
     volumes:
-      - type: bind
-        source: ./
-        target: /usr/src/app
-      - type: volume
-        target: /usr/src/app/node_modules
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
     environment:
       - PORT=${PORT}
     command: ['npm', 'run', 'dev']

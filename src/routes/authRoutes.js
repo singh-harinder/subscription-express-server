@@ -4,19 +4,19 @@ const authRouter = Router();
 
 authRouter.post('/sign-up', (req, res) =>
   res.send({
-    title: 'Sign up route',
+    message: 'Sign up route',
   })
 );
 
 authRouter.post('/sign-in', (req, res) =>
   res.send({
-    title: 'Sign in route',
+    message: 'Sign in route',
   })
 );
 
 authRouter.post('/sign-out', (req, res) =>
   res.send({
-    title: 'Sign out route',
+    message: 'Sign out route',
   })
 );
 
