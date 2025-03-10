@@ -4,10 +4,18 @@ import authRouter from './routes/authRoutes.js';
 import subscriptionRouter from './routes/subscriptionRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import connectToDatabase from './database/mongodb.js';
+import errorMiddleware from './middleware/errorMiddleware.js';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
 const PORT = process.env.PORT;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use(errorMiddleware);
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
