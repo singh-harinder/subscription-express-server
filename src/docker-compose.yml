@@ -1,0 +1,21 @@
+name: subscription-express-server
+
+services:
+  subscription-express:
+    container_name: subscription-express
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=development
+    ports:
+      - '4000:4000'
+    volumes:
+      - type: bind
+        source: ./
+        target: /usr/src/app
+      - type: volume
+        target: /usr/src/app/node_modules
+    environment:
+      - PORT=${PORT}
+    command: ['npm', 'run', 'dev']
