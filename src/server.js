@@ -6,6 +6,7 @@ import userRouter from './routes/userRoutes.js';
 import connectToDatabase from './database/mongodb.js';
 import errorMiddleware from './middleware/errorMiddleware.js';
 import cookieParser from 'cookie-parser';
+import arcjectMiddleware from './middleware/arcjetMiddleware.js';
 
 const app = express();
 
@@ -14,7 +15,7 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+app.use(arcjectMiddleware);
 app.use(errorMiddleware);
 
 app.use('/api/v1/auth', authRouter);
