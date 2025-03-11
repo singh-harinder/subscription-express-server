@@ -45,3 +45,5 @@ POST request to  https://subscription-express-server.onrender.com/api/v1/subscri
 # To get your subscriptions
 GET request to  https://subscription-express-server.onrender.com/api/v1/subscriptions/user/youruserid along with your bearer token.
 
+
+NOTE: First time request may be slow. Since the server is deployed on render free plan which suspends the instance in case of inactivity.
